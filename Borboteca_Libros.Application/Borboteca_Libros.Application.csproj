@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Borboteca_Libros.Domain\Borboteca_Libros.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Borboteca_Libros.Domain\Borboteca_Libros.Domain.csproj" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
