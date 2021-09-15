@@ -15,7 +15,7 @@ namespace Borboteca_Libros.Domain.Entities
         public string Comprobante { get; set; }
 
         public Boolean estado { get; set; }
-
+        public int CarroId { get; set; }
         public Carro Carro { get; set; }
 
     }

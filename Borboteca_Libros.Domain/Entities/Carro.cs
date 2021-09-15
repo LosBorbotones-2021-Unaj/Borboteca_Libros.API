@@ -13,8 +13,8 @@ namespace Borboteca_Libros.Domain.Entities
         public float Valor { get; set; }
 
         public Boolean Activo { get; set; }
-
-        public Usuarios Usuario { get; set; }
+        public int UsuariosId { get; set; }
+        public Usuarios Usuarios { get; set; }
 
         public virtual List<Ventas> Ventas { get; set; }
     }

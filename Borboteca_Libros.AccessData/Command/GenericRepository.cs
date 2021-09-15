@@ -1,7 +1,6 @@
 ﻿using Borboteca_Libros.AccessData.Command.Repository;
 using System;
 using System.Collections.Generic;
-using Borboteca_Libros.AccessData;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +31,5 @@ namespace Borboteca_Libros.AccessData.Command
             _context.Remove(_context.Find<T>(_id));
             _context.SaveChanges();
         }
-
     }
 }

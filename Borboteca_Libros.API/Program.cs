@@ -1,3 +1,6 @@
+using Borboteca_Libros.AccessData;
+using Borboteca_Libros.AccessData.Command;
+using Borboteca_Libros.AccessData.Command.Repository;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -11,9 +14,11 @@ namespace Borboteca_Libros.API
 {
     public class Program
     {
+       
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            
+                CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
