@@ -23,16 +23,19 @@ namespace Borboteca_Libros.AccessData
             new ConfigUsuarios(modelBuilder.Entity<Usuarios>());
             new ConfigAutor(modelBuilder.Entity<Autor>());
             new ConfigLibro(modelBuilder.Entity<Libro>());
+            new ConfigCarroLibro(modelBuilder.Entity<CarroLibro>());
+            new ConfigCarro(modelBuilder.Entity<Carro>());
+            new ConfigVentas(modelBuilder.Entity<Ventas>());
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Favoritos> Favoritos { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
-        public DbSet<Roll> roll { get; set; }
-        public DbSet<Autor> autor { get; set; }
-        public DbSet<Libro> libro { get; set; }
-        public DbSet<Carro_Libro> carro_libro {get; set;}
+        public DbSet<Roll> Roll { get; set; }
+        public DbSet<Autor> Autor { get; set; }
+        public DbSet<Libro> Libro { get; set; }
+        public DbSet<CarroLibro> CarroLibro {get; set;}
         public DbSet<Ventas> Ventas { get; set; }
-        public DbSet<Carro> carro { get; set; }
+        public DbSet<Carro> Carro { get; set; }
         
     }
 }

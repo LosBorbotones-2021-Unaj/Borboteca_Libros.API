@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Borboteca_Libros.Domain.Entities
 {
-    public class Carro_Libro
+    public class CarroLibro
     {
         public int Id { get; set; }
 
