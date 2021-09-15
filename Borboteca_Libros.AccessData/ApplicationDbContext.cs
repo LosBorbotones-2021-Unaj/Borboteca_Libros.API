@@ -17,7 +17,7 @@ namespace Borboteca_Libros.AccessData
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+
             new ConfigFavoritos(modelBuilder.Entity<Favoritos>());
             new ConfigRoll(modelBuilder.Entity<Roll>());
             new ConfigUsuarios(modelBuilder.Entity<Usuarios>());
@@ -28,7 +28,11 @@ namespace Borboteca_Libros.AccessData
         public DbSet<Favoritos> Favoritos { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Roll> roll { get; set; }
-
+        public DbSet<Autor> autor { get; set; }
+        public DbSet<Libro> libro { get; set; }
+        public DbSet<Carro_Libro> carro_libro {get; set;}
+        public DbSet<Ventas> Ventas { get; set; }
+        public DbSet<Carro> carro { get; set; }
         
     }
 }
