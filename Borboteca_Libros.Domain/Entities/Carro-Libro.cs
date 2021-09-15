@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +13,5 @@ namespace Borboteca_Libros.Domain.Entities
         public Libro Libro { get; set; }
 
         public Carro Carro { get; set; }
-
-        //public ICollection<Libro> ListaLibros { get; set; }
-        //public ICollection<Carro> ListaCarro { get; set; }
     }
 }
