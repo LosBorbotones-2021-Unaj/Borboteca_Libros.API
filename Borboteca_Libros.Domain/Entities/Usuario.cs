@@ -13,7 +13,7 @@ namespace Borboteca_Libros.Domain.Entities
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Contraseña { get; set; }
-        public Roll Roll { get; set; }
+        public virtual Roll Roll { get; set; }
         
     }
 }

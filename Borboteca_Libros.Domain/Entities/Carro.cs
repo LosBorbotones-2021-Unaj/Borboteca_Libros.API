@@ -14,7 +14,8 @@ namespace Borboteca_Libros.Domain.Entities
 
         public Boolean Activo { get; set; }
 
-        public Usuarios Usuario { get; set; }
+        public int Usuarioid { get; set; }
+        public virtual Usuarios Usuario { get; set; }
 
         public virtual List<Ventas> Ventas { get; set; }
     }

@@ -10,6 +10,8 @@ namespace Borboteca_Libros.Domain.Entities
     {
         public int Id { get; set; }
 
+        public int libroid { get; set; }
+        public int Carroid { get; set; }
         public Libro Libro { get; set; }
 
         public Carro Carro { get; set; }

@@ -13,8 +13,8 @@ namespace Borboteca_Libros.AccessData.Configurations
         public ConfigCarroLibro(EntityTypeBuilder<CarroLibro> entityTypeBuilder)
         {
             entityTypeBuilder.HasKey(x => x.Id);
-            entityTypeBuilder.Property(x => x.Libro).IsRequired();
-            entityTypeBuilder.Property(x => x.Carro).IsRequired();
+            //entityTypeBuilder.Property(x => x.Libro).IsRequired();
+            //entityTypeBuilder.Property(x => x.Carro).IsRequired();
 
 
         }

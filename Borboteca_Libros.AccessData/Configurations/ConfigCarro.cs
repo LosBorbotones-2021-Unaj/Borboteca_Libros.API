@@ -14,7 +14,7 @@ namespace Borboteca_Libros.AccessData.Configurations
         {
             entityTypeBuilder.HasKey(x => x.Id);
             entityTypeBuilder.Property(x => x.Activo).IsRequired();
-            entityTypeBuilder.Property(x => x.Usuario).IsRequired();
+            
             entityTypeBuilder.Property(x => x.Valor).IsRequired();
 
            

@@ -13,10 +13,10 @@ namespace Borboteca_Libros.AccessData.Configurations
         public ConfigVentas(EntityTypeBuilder<Ventas> entityTypeBuilder)
         {
             entityTypeBuilder.HasKey(x => x.Id);
-            entityTypeBuilder.Property(x => x.Fecha.ToShortDateString()).IsRequired();
+            entityTypeBuilder.Property(x => x.Fecha).IsRequired();
             entityTypeBuilder.Property(x => x.estado).IsRequired();
             entityTypeBuilder.Property(x => x.Comprobante).IsRequired().HasMaxLength(500);
-            entityTypeBuilder.Property(x => x.Carro).IsRequired();
+           // entityTypeBuilder.Property(x => x.Carro).IsRequired();
 
 
         }
