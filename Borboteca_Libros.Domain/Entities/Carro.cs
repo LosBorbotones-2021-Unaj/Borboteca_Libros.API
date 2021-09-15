@@ -16,7 +16,7 @@ namespace Borboteca_Libros.Domain.Entities
 
         public int UsuarioId { get; set; }
 
-        public Usuario UsuarioNavigator { get; set; }
+        public Usuarios UsuarioNavigator { get; set; }
 
         public ICollection<Ventas> ListaVentas { get; set; }
 

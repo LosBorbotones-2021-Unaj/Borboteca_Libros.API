@@ -14,11 +14,10 @@ namespace Borboteca_Libros.AccessData
         {
 
         }
-        public ApplicationDbContext()
-        {
-        }
         public DbSet<Favoritos> Favoritos { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Roll> roll { get; set; }
+
+        
     }
 }

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Borboteca_Libros.AccessData\Borboteca_Libros.AccessData.csproj" />
     <ProjectReference Include="..\Borboteca_Libros.Application\Borboteca_Libros.Application.csproj" />
   </ItemGroup>
 
