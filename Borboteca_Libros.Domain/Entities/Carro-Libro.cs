@@ -17,6 +17,6 @@ namespace Borboteca_Libros.Domain.Entities
         public ICollection<Libro> ListaLibros { get; set; }
 
 
-        public ICollection<Carro> ListaCarro { get; set; }
+        public Carro CarroNavigator { get; set; }
     }
 }
