@@ -32,6 +32,8 @@ namespace Borboteca_Libros.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Borboteca_Libros.API", Version = "v1" });
             });
+           // var conecctionString = Configuration.GetSection("ConnectionString").Value;
+           // services.AddDbContext<ApplicationDbcontext>(option => option.UseSqlServer(conecctionString));
 
 
         }
