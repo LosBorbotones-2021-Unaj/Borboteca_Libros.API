@@ -41,6 +41,8 @@ namespace Borboteca_Libros.API
             {
                 options.AddPolicy("AnyAllow", policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
+           // var conecctionString = Configuration.GetSection("ConnectionString").Value;
+           // services.AddDbContext<ApplicationDbcontext>(option => option.UseSqlServer(conecctionString));
 
 
         }
