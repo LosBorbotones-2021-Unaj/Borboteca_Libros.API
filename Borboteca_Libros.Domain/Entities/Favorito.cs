@@ -8,8 +8,8 @@ namespace Borboteca_Libros.Domain.Entities
 {
     public class Favoritos
     {
-        public int id { get; set; }
-        public int idUsuario { get; set; }
-        public int idLibro { get; set; }
+        public int Id { get; set; }
+        public virtual Libro Libros { get; set; } 
+        public virtual Usuarios Usuarios { get; set; }
     }
 }

@@ -11,9 +11,9 @@ namespace Borboteca_Libros.AccessData.Configurations
     class ConfigFavoritos
     {
         public ConfigFavoritos(EntityTypeBuilder<Favoritos> BuilderFavorito) {
-            BuilderFavorito.HasKey(x => x.id);
-            BuilderFavorito.Property(x => x.idLibro).IsRequired();
-            BuilderFavorito.Property(x => x.idUsuario).IsRequired();
+            BuilderFavorito.HasKey(x => x.Id);
+            //BuilderFavorito.Property(x => x.idLibro).IsRequired();
+            //BuilderFavorito.Property(x => x.idUsuario).IsRequired();
         }
     }
 }

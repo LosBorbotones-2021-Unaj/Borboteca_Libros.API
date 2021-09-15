@@ -11,7 +11,7 @@ namespace Borboteca_Libros.AccessData.Configurations
     class ConfigRoll
     {
         public ConfigRoll(EntityTypeBuilder<Roll> BuilderRoll) {
-            BuilderRoll.HasKey(x => x.id);
+            BuilderRoll.HasKey(x => x.Id);
             BuilderRoll.Property(x => x.Descripcion).HasMaxLength(200);
         }
     }
