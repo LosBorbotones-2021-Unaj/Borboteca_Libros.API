@@ -8,17 +8,16 @@ namespace Borboteca_Libros.Domain.Entities
 {
     public class Carro
     {
-        public int CarroId { get; set; }
+        public int Id { get; set; }
 
         public float Valor { get; set; }
 
         public string Activo { get; set; }
 
-        public int UsuarioId { get; set; }
+        //public int UsuarioId { get; set; }
 
-        public Usuarios UsuarioNavigator { get; set; }
+        public Usuarios Usuario { get; set; }
 
-        public ICollection<Ventas> ListaVentas { get; set; }
-
+        public virtual List<Ventas> Ventas { get; set; }
     }
 }

@@ -17,10 +17,13 @@ namespace Borboteca_Libros.AccessData
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            
             new ConfigFavoritos(modelBuilder.Entity<Favoritos>());
             new ConfigRoll(modelBuilder.Entity<Roll>());
             new ConfigUsuarios(modelBuilder.Entity<Usuarios>());
+            new ConfigAutor(modelBuilder.Entity<Autor>());
+            new ConfigLibro(modelBuilder.Entity<Libro>());
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<Favoritos> Favoritos { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }

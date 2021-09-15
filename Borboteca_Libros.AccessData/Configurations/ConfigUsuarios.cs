@@ -12,12 +12,12 @@ namespace Borboteca_Libros.AccessData.Configurations
     {
         public ConfigUsuarios(EntityTypeBuilder<Usuarios> entityTypeBuilder)
         {
-            entityTypeBuilder.HasKey(x => x.id);
+            entityTypeBuilder.HasKey(x => x.Id);
             entityTypeBuilder.Property(x => x.Nombre).HasMaxLength(50).IsRequired();
             entityTypeBuilder.Property(x => x.Apellido).HasMaxLength(50).IsRequired();
             entityTypeBuilder.Property(x => x.Email).HasMaxLength(50).IsRequired();
             entityTypeBuilder.Property(x => x.Contraseña).HasMaxLength(50).IsRequired().IsRequired();//Esto de aca no se si podemos hacer q no este en texto plano en la base de datos
-            entityTypeBuilder.Property(x => x.rolid).IsRequired();
+            //entityTypeBuilder.Property(x => x.rolid).IsRequired();
         }
     }
 }

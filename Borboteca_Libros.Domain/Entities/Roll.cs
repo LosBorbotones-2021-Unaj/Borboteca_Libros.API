@@ -8,7 +8,7 @@ namespace Borboteca_Libros.Domain.Entities
 {
     public class Roll
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Descripcion { get; set; }
     }
 }

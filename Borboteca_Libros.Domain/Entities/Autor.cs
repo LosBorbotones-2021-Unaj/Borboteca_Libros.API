@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Borboteca_Libros.Domain.Entities
 {
-    public class Carro_Libro
+    public class Autor
     {
         public int Id { get; set; }
-
-        public Libro Libro { get; set; }
-
-        public Carro Carro { get; set; }
+        public string NombreAutor { get; set; }
+        public string ApellidoAutor { get; set; }
     }
 }

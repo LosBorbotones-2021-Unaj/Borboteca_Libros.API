@@ -8,7 +8,7 @@ namespace Borboteca_Libros.Domain.Entities
 {
     public class Ventas
     {
-        public int VentaId { get; set; }
+        public int Id { get; set; }
 
         public DateTime Fecha { get; set; }
 
@@ -16,9 +16,7 @@ namespace Borboteca_Libros.Domain.Entities
 
         public string estado { get; set; }
 
-        public int CarroId { get; set; }
-
-        public Carro CarroNavigator { get; set; }
+        public Carro Carro { get; set; }
 
     }
 }
