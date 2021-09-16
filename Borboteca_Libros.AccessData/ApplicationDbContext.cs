@@ -26,7 +26,7 @@ namespace Borboteca_Libros.AccessData
             new ConfigCarroLibro(modelBuilder.Entity<CarroLibro>());
             new ConfigCarro(modelBuilder.Entity<Carro>());
             new ConfigVentas(modelBuilder.Entity<Ventas>());
-           // base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<CarroLibro> CarroLibro { get; set; }
         public DbSet<Ventas> Ventas { get; set; }

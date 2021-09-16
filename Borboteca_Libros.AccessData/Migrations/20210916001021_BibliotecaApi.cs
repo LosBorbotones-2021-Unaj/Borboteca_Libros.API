@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Borboteca_Libros.AccessData.Migrations
 {
-    public partial class Biblioteca : Migration
+    public partial class BibliotecaApi : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

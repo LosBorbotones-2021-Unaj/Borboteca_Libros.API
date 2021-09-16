@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Borboteca_Libros.AccessData.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210915235352_Biblioteca")]
-    partial class Biblioteca
+    [Migration("20210916001021_BibliotecaApi")]
+    partial class BibliotecaApi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
