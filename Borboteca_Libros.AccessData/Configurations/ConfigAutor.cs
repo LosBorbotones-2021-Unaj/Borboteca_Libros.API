@@ -12,9 +12,6 @@ namespace Borboteca_Libros.AccessData.Configurations
     {
         public ConfigAutor(EntityTypeBuilder<Autor> BuilderLibro)
         {
-            
-            //BuilderLibro.HasOne(x => x.Libro).WithOne(y => y.Autor);
-
         }
     }
 }
