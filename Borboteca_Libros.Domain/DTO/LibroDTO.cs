@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Borboteca_Libros.Domain.Entities
+namespace Borboteca_Libros.Domain.DTO
 {
-    public class Libro
+    public class LibroDTO
     {
-        public int Id { get; set; }
         public string Titulo { get; set; }
-        public string Recenia { get; set; }
+        public string Receña { get; set; }
         public string Editorial { get; set; }
         public DateTime FechaDePublicacion { get; set; }
         public string Imagen { get; set; }
         public string Pach { get; set; }
         public int Precio { get; set; }
-        public Autor Autor { get; set; }
+        public int IdAutor { get; set; }
     }
 }

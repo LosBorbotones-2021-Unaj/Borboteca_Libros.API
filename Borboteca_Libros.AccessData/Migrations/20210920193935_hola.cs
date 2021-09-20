@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Borboteca_Libros.AccessData.Migrations
 {
-    public partial class Libros : Migration
+    public partial class hola : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,8 +13,8 @@ namespace Borboteca_Libros.AccessData.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NombreAutor = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ApellidoAutor = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    NombreAutor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    ApellidoAutor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,7 +28,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titulo = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Receña = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    Recenia = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     Editorial = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     FechaDePublicacion = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Imagen = table.Column<string>(type: "nvarchar(max)", nullable: false),

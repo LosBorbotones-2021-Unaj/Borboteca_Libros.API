@@ -27,10 +27,14 @@ namespace Borboteca_Libros.AccessData.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ApellidoAutor")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("NombreAutor")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -67,7 +71,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                     b.Property<int>("Precio")
                         .HasColumnType("int");
 
-                    b.Property<string>("Receña")
+                    b.Property<string>("Recenia")
                         .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");

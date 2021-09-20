@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Borboteca_Libros.AccessData\Borboteca_Libros.AccessData.csproj" />
     <ProjectReference Include="..\Borboteca_Libros.Domain\Borboteca_Libros.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
