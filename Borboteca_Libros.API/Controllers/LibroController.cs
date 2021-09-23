@@ -11,7 +11,7 @@ namespace Borboteca_Libros.API.Controllers
 {
     [ApiController]
     [Route("api/Libro")]
-    public class LibroController : Controller
+    public class LibroController : Controller 
     {
         private readonly ILibroService _service;
         public LibroController(ILibroService service)
