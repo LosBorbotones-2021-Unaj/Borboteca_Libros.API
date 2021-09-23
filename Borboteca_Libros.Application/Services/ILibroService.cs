@@ -43,7 +43,6 @@ namespace Borboteca_Libros.Application.Services
                 Autor = _autor,
             };
             _repository.Add<Libro>(entity);
-
             return libro;
         }
     }

@@ -58,8 +58,10 @@ namespace Borboteca_Libros.API
             //Injecciones de dependencias
 
             services.AddTransient<IGenericRepository, GenericRepository>();
+
             services.AddTransient<ILibroService, LibroService>();
             services.AddTransient<ILibroQuery, LibroQuery>();
+
 
             //Configuracion SqlKata
             services.AddTransient<Compiler, SqlServerCompiler>();

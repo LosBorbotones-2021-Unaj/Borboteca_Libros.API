@@ -7,7 +7,7 @@ namespace Borboteca_Libros.Domain.Entities
     {
         public int Id { get; set; }
         public string Titulo { get; set; }
-        public string Recenia { get; set; }
+        public string Resenia { get; set; }
         public string Editorial { get; set; }
         public DateTime FechaDePublicacion { get; set; }
         public string Imagen { get; set; }

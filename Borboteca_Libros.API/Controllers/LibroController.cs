@@ -11,7 +11,7 @@ namespace Borboteca_Libros.API.Controllers
 {
     [ApiController]
     [Route("api/Libro")]
-    public class LibroController : Controller 
+    public class LibroController : Controller
     {
         private readonly ILibroService _service;
         public LibroController(ILibroService service)
@@ -19,16 +19,17 @@ namespace Borboteca_Libros.API.Controllers
             this._service = service;
         }
         [HttpPost]
-        public IActionResult Post(LibroDTO libro) 
+        public IActionResult Post(LibroDTO libro)
         {
-            try 
+            try
             {
                 return new JsonResult(_service.CrearLibro(libro)) { StatusCode = 201 };
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return BadRequest(new { error = "no se pudo crear el libro" });
             }
         }
+        
     }
 }
