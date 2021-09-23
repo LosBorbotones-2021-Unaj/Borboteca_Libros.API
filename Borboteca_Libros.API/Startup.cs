@@ -61,6 +61,8 @@ namespace Borboteca_Libros.API
 
             services.AddTransient<ILibroService, LibroService>();
             services.AddTransient<ILibroQuery, LibroQuery>();
+            services.AddTransient<IAutorService, AutorService>();
+            services.AddTransient<IAutorQuery, AutorQuery>();
 
 
             //Configuracion SqlKata
