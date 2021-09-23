@@ -71,7 +71,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                     b.Property<int>("Precio")
                         .HasColumnType("int");
 
-                    b.Property<string>("Recenia")
+                    b.Property<string>("Resenia")
                         .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
