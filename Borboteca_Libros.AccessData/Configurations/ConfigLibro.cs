@@ -14,7 +14,7 @@ namespace Borboteca_Libros.AccessData.Configurations
         {
             BuilderLibro.HasKey(x => x.Id);
             BuilderLibro.Property(x => x.Titulo).IsRequired().HasMaxLength(50);
-            BuilderLibro.Property(x => x.Recenia).IsRequired().HasMaxLength(1000);
+            BuilderLibro.Property(x => x.Resenia).IsRequired().HasMaxLength(1000);
             BuilderLibro.Property(x => x.Editorial).IsRequired().HasMaxLength(50);
             BuilderLibro.Property(x => x.FechaDePublicacion).IsRequired();
             BuilderLibro.Property(x => x.Imagen).IsRequired();

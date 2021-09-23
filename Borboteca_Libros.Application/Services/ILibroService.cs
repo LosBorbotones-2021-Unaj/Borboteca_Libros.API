@@ -34,7 +34,7 @@ namespace Borboteca_Libros.Application.Services
             var entity = new Libro
             {
                 Titulo = libro.Titulo,
-                Recenia = libro.Receña,
+                Resenia = libro.Resenia,
                 Editorial = libro.Editorial,
                 FechaDePublicacion = libro.FechaDePublicacion,
                 Imagen = libro.Imagen,
