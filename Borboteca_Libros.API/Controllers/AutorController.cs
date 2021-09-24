@@ -18,7 +18,7 @@ namespace Borboteca_Libros.API.Controllers
         {
             this._service = service;
         }
-        /*
+        [HttpPost]
         public IActionResult Post(AutorDTO autor)
         {
             try
@@ -30,6 +30,6 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no se pudo crear al autor" });
             }
         }
-        */
+        
     }
 }
