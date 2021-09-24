@@ -30,6 +30,43 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no se pudo crear al autor" });
             }
         }
-        
+
+        [HttpGet]
+
+        public IActionResult GetAutores()
+        {
+            try
+            {
+                return new JsonResult(_service.PedirAutor()) { StatusCode = 200 };
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { error = "no se pudo obtener la lista de autores." });
+            }
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetAutoresPorid(int id)
+        {
+            try
+            {
+                return new JsonResult(_service.PedirAutorPorid(id)) { StatusCode = 200 };
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { error = "no se pudo obtener el autor por id." });
+            }
+        }
+        [HttpGet("API/Autor/{nombre}")]
+        public IActionResult GetAutoresPorNombre(string nombre)
+        {
+            try
+            {
+                return new JsonResult(_service.PedirAutorPorNombre(nombre)) { StatusCode = 200 };
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { error = "no se pudo obtener la lista de autores por nombre." });
+            }
+        }
     }
 }
