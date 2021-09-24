@@ -15,6 +15,7 @@ namespace Borboteca_Libros.AccessData
         {
 
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             new ConfigAutor(modelBuilder.Entity<Autor>());
