@@ -48,7 +48,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AutorId")
+                    b.Property<int>("AutorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Editorial")
@@ -91,10 +91,17 @@ namespace Borboteca_Libros.AccessData.Migrations
             modelBuilder.Entity("Borboteca_Libros.Domain.Entities.Libro", b =>
                 {
                     b.HasOne("Borboteca_Libros.Domain.Entities.Autor", "Autor")
-                        .WithMany()
-                        .HasForeignKey("AutorId");
+                        .WithMany("Libro")
+                        .HasForeignKey("AutorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Autor");
+                });
+
+            modelBuilder.Entity("Borboteca_Libros.Domain.Entities.Autor", b =>
+                {
+                    b.Navigation("Libro");
                 });
 #pragma warning restore 612, 618
         }

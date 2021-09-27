@@ -35,12 +35,9 @@ namespace Borboteca_Libros.API.Controllers
         public async Task<IActionResult> DescargarLibro(int id)
         {
             var path = @_service.PedirPathLibro(id);
-            //var path = @"C:\Users\Carlos\Desktop\Borboteca\Practica.pdf";
             var memory = new MemoryStream();
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
-            {
-                await stream.CopyToAsync(memory);
-            }
+            {await stream.CopyToAsync(memory);}
             memory.Position = 0;
             var ext = Path.GetExtension(path).ToLowerInvariant();
             return File(memory, GetMimeTypes()[ext], Path.GetFileName(path));

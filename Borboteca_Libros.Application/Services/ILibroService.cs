@@ -27,11 +27,6 @@ namespace Borboteca_Libros.Application.Services
         }
         public LibroDTO CrearLibro(LibroDTO libro) 
         {
-            Autor _autor = new Autor()
-            {
-                NombreAutor = "Marcos",
-                ApellidoAutor = "Garcia"
-            };
             var entity = new Libro
             {
                 Titulo = libro.Titulo,
@@ -39,9 +34,9 @@ namespace Borboteca_Libros.Application.Services
                 Editorial = libro.Editorial,
                 FechaDePublicacion = libro.FechaDePublicacion,
                 Imagen = libro.Imagen,
-                Pach = libro.Pach,
+                Pach = libro.Path,
                 Precio = libro.Precio,
-                Autor = _autor,
+                AutorId = libro.IdAutor
             };
             _repository.Add<Libro>(entity);
             return libro;

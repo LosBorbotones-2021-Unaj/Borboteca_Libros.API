@@ -11,5 +11,6 @@ namespace Borboteca_Libros.Domain.Entities
         public int Id { get; set; }
         public string NombreAutor { get; set; }
         public string ApellidoAutor { get; set; }
+        public List<Libro> Libro { get; set; }
     }
 }

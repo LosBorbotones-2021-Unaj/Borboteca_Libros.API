@@ -56,7 +56,7 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no se pudo obtener el autor por id." });
             }
         }
-        [HttpGet("API/Autor/{nombre}")]
+        [HttpGet("NombreAutor/{nombre}")]
         public IActionResult GetAutoresPorNombre(string nombre)
         {
             try

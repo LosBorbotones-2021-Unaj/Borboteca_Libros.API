@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Borboteca_Libros.AccessData.Migrations
 {
-    public partial class _26 : Migration
+    public partial class UltimaMigracion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -34,7 +34,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                     Imagen = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Pach = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
                     Precio = table.Column<int>(type: "int", nullable: false),
-                    AutorId = table.Column<int>(type: "int", nullable: true)
+                    AutorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,7 +44,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                         column: x => x.AutorId,
                         principalTable: "Autor",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

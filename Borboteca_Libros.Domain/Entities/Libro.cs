@@ -13,6 +13,7 @@ namespace Borboteca_Libros.Domain.Entities
         public string Imagen { get; set; }
         public string Pach { get; set; }
         public int Precio { get; set; }
+        public int AutorId { get; set; }
         public Autor Autor { get; set; }
     }
 }
