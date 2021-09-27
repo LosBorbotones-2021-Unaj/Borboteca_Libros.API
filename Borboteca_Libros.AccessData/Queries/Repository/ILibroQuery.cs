@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Borboteca_Libros.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Borboteca_Libros.AccessData.Queries.Repository
 {
     public interface ILibroQuery
     {
+        Libro GetPathLibro(int id);
     }
 }

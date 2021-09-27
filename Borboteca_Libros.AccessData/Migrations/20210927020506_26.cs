@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Borboteca_Libros.AccessData.Migrations
 {
-    public partial class ElBueno : Migration
+    public partial class _26 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
