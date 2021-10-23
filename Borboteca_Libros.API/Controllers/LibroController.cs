@@ -31,6 +31,19 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no se pudo crear el libro" });
             }
         }
+        [HttpGet]
+        [Route("PedirLibros/")]
+        public IActionResult GetLibros() 
+        {
+            try 
+            {
+                return new JsonResult(_service.PedirLibros()) { StatusCode = 200 };
+            }
+            catch 
+            {
+                return BadRequest(new { error = "no hay libros" });
+            }
+        }
         [HttpGet("{id}")]
         public async Task<IActionResult> DescargarLibro(int id)
         {

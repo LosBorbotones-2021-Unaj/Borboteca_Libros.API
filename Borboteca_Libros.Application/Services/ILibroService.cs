@@ -14,6 +14,7 @@ namespace Borboteca_Libros.Application.Services
     {
         public LibroDTO CrearLibro(LibroDTO libro);
         string PedirPathLibro(int id);
+        List<LibrosMuestra> PedirLibros();
     }
     public class LibroService : ILibroService 
     {
@@ -40,6 +41,11 @@ namespace Borboteca_Libros.Application.Services
             };
             _repository.Add<Libro>(entity);
             return libro;
+        }
+
+        public List<LibrosMuestra> PedirLibros()
+        {
+            return _query.PedirLibros();
         }
 
         public string PedirPathLibro(int id)
