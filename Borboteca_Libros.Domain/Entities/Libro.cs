@@ -15,5 +15,6 @@ namespace Borboteca_Libros.Domain.Entities
         public int Precio { get; set; }
         public int AutorId { get; set; }
         public Autor Autor { get; set; }
+        public List<LibroGenero> LibroGenero { get; set; }
     }
 }
