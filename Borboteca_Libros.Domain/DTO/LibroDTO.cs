@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Borboteca_Libros.Domain.Entities;
 namespace Borboteca_Libros.Domain.DTO
 {
     public class LibroDTO
@@ -16,5 +16,6 @@ namespace Borboteca_Libros.Domain.DTO
         public string Path { get; set; }
         public int Precio { get; set; }
         public int IdAutor { get; set; }
+        public List<Genero> Genero {get; set;}
     }
 }

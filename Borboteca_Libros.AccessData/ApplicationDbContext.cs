@@ -20,10 +20,14 @@ namespace Borboteca_Libros.AccessData
         {
             new ConfigAutor(modelBuilder.Entity<Autor>());
             new ConfigLibro(modelBuilder.Entity<Libro>());
+            new ConfigGenero(modelBuilder.Entity<Genero>());
+            new ConfigLibroGenero(modelBuilder.Entity<LibroGenero>());
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Autor> Autor { get; set; }
         public DbSet<Libro> Libro { get; set; }
+        public DbSet<Genero> Genero { get; set; }
+        public DbSet<LibroGenero> LibroGenero { get; set; }
 
         
     }

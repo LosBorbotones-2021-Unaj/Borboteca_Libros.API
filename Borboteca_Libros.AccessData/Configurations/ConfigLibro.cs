@@ -20,6 +20,7 @@ namespace Borboteca_Libros.AccessData.Configurations
             BuilderLibro.Property(x => x.Imagen).IsRequired();
             BuilderLibro.Property(x => x.Pach).IsRequired().HasMaxLength(120);
             BuilderLibro.Property(x => x.Precio).IsRequired();
+            BuilderLibro.HasMany(x => x.LibroGenero).WithOne(x => x.Libro).HasForeignKey(x => x.LibroId);
             BuilderLibro.HasOne(x => x.Autor).WithMany(x => x.Libro).HasForeignKey(x => x.AutorId);
         }
     }

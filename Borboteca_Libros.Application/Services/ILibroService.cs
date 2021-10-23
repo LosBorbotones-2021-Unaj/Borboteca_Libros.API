@@ -36,7 +36,8 @@ namespace Borboteca_Libros.Application.Services
                 Imagen = libro.Imagen,
                 Pach = libro.Path,
                 Precio = libro.Precio,
-                AutorId = libro.IdAutor
+                AutorId = libro.IdAutor,
+                GeneroId = libro.GeneroId
             };
             _repository.Add<Libro>(entity);
             return libro;
