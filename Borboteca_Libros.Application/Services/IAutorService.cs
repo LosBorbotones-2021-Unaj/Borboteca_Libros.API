@@ -31,8 +31,7 @@ namespace Borboteca_Libros.Application.Services
         {
             var entity = new Autor
             {
-                NombreAutor = autor.NombreAutor,
-                ApellidoAutor = autor.ApellidoAutor,
+                NombreCompleto = autor.NombreCompleto,
          
             };
             _repository.Add<Autor>(entity);

@@ -10,11 +10,10 @@ namespace Borboteca_Libros.AccessData.Configurations
 {
     public class ConfigAutor
     {
-        public ConfigAutor(EntityTypeBuilder<Autor> BuilderLibro)
+        public ConfigAutor(EntityTypeBuilder<Autor> BuilderAutor)
         {
-            BuilderLibro.HasKey(x => x.Id);
-            BuilderLibro.Property(x => x.NombreAutor).IsRequired().HasMaxLength(50);
-            BuilderLibro.Property(x => x.ApellidoAutor).IsRequired().HasMaxLength(50);
+            BuilderAutor.HasKey(x => x.Id);
+            BuilderAutor.Property(x => x.NombreCompleto).IsRequired().HasMaxLength(50);
         }
     }
 }

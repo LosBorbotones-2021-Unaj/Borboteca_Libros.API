@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Borboteca_Libros.AccessData.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210927024605_UltimaMigracion")]
-    partial class UltimaMigracion
+    [Migration("20211023011638_test1")]
+    partial class test1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,12 +28,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ApellidoAutor")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("NombreAutor")
+                    b.Property<string>("NombreCompleto")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");

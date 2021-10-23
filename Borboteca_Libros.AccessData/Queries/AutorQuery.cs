@@ -25,7 +25,7 @@ namespace Borboteca_Libros.AccessData.Queries
         public List<Autor> ObtenerListaDeAutores()
         {
             var db = new QueryFactory(connection, SqlKata);
-            var autor = db.Query("Autor").Select("NombreAutor", "ApellidoAutor", "Id");
+            var autor = db.Query("Autor").Select("NombreCompleto", "Id");
             var retornador = autor.Get<Autor>();
             return retornador.ToList();
 
@@ -33,13 +33,13 @@ namespace Borboteca_Libros.AccessData.Queries
         public AutorDTO ObtenerAutorPorid(int id)
         {
             var db = new QueryFactory(connection, SqlKata);
-            var autor = db.Query("Autor").Select("NombreAutor", "ApellidoAutor", "Id").Where("Autor.Id", "=", id).FirstOrDefault<AutorDTO>();
+            var autor = db.Query("Autor").Select("NombreCompleto", "Id").Where("Autor.Id", "=", id).FirstOrDefault<AutorDTO>();
             return autor;
         }
         public List<AutorDTO> ObtenerAutorPorNombre(string nombre)
         {
             var db = new QueryFactory(connection, SqlKata);
-            var autor = db.Query("Autor").Select("NombreAutor", "ApellidoAutor", "Id").Where("Autor.NombreAutor", "=", nombre);
+            var autor = db.Query("Autor").Select("NombreCompleto", "Id").Where("Autor.NombreCompleto", "=", nombre);
             var retornador = autor.Get<AutorDTO>();
             return retornador.ToList();
         }
