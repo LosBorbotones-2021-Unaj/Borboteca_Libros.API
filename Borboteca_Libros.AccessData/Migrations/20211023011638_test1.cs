@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Borboteca_Libros.AccessData.Migrations
 {
-    public partial class UltimaMigracion : Migration
+    public partial class test1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,8 +13,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NombreAutor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ApellidoAutor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    NombreCompleto = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {

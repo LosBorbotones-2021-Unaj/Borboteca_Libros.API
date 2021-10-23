@@ -8,7 +8,6 @@ namespace Borboteca_Libros.Domain.DTO
 {
    public class AutorDTO
     {
-        public string NombreAutor { get; set; }
-        public string ApellidoAutor { get; set; }
+        public string NombreCompleto { get; set; }
     }
 }
