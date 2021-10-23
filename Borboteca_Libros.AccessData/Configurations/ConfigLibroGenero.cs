@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Borboteca_Libros.AccessData.Configurations
 {
-    public class ConfigAutor
+    public class ConfigLibroGenero
     {
-        public ConfigAutor(EntityTypeBuilder<Autor> BuilderAutor)
+        public ConfigLibroGenero(EntityTypeBuilder<LibroGenero> BuilderLibroGenero)
         {
-            BuilderAutor.HasKey(x => x.Id);
-            BuilderAutor.Property(x => x.NombreCompleto).IsRequired().HasMaxLength(50);
+            BuilderLibroGenero.HasKey(x => x.Id);
+            BuilderLibroGenero.Property(x => x.GeneroId);
+            BuilderLibroGenero.Property(x => x.LibroId);
 
         }
     }

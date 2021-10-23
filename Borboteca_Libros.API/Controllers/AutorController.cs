@@ -44,7 +44,8 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no se pudo obtener la lista de autores." });
             }
         }
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("GetPorid")]
         public IActionResult GetAutoresPorid(int id)
         {
             try
@@ -56,7 +57,8 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no se pudo obtener el autor por id." });
             }
         }
-        [HttpGet("NombreAutor/{nombre}")]
+        [HttpGet]
+        [Route("GetPorNombre")]
         public IActionResult GetAutoresPorNombre(string nombre)
         {
             try
@@ -68,5 +70,6 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no se pudo obtener la lista de autores por nombre." });
             }
         }
+        
     }
 }

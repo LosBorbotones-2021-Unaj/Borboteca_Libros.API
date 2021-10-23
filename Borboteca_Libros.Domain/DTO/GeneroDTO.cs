@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Borboteca_Libros.Domain.DTO
 {
-   public class AutorDTO
+    public class GeneroDTO
     {
-        public string NombreCompleto { get; set; }
+        public string Descripcion { get; set; }
     }
 }

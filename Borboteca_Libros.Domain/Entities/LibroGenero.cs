@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Borboteca_Libros.Domain.Entities
 {
-    public class Autor
+    public class LibroGenero
     {
         public int Id { get; set; }
-        public string NombreCompleto { get; set; }
+        public int LibroId { get; set; }
+        public int GeneroId { get; set; }
 
-        public List<Libro> Libro { get; set; }
+        public Genero Genero { get; set; }
+        public Libro Libro { get; set; }
     }
 }

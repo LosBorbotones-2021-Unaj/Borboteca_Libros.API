@@ -14,8 +14,8 @@ namespace Borboteca_Libros.Application.Services
     {
         public AutorDTO CrearAutor(AutorDTO libro);
         public List<Autor> PedirAutor();
-        public Autor PedirAutorPorid(int id);
-        public List<Autor> PedirAutorPorNombre(string nombre);
+        public AutorDTO PedirAutorPorid(int id);
+        public List<AutorDTO> PedirAutorPorNombre(string nombre);
     }
     public class AutorService : IAutorService
     {
@@ -31,8 +31,7 @@ namespace Borboteca_Libros.Application.Services
         {
             var entity = new Autor
             {
-                NombreAutor = autor.NombreAutor,
-                ApellidoAutor = autor.ApellidoAutor,
+                NombreCompleto = autor.NombreCompleto,
          
             };
             _repository.Add<Autor>(entity);
@@ -43,11 +42,11 @@ namespace Borboteca_Libros.Application.Services
         {
             return _query.ObtenerListaDeAutores();
         }
-        public Autor PedirAutorPorid(int id)
+        public AutorDTO PedirAutorPorid(int id)
         {
             return _query.ObtenerAutorPorid(id);
         }
-        public List<Autor> PedirAutorPorNombre(string nombre)
+        public List<AutorDTO> PedirAutorPorNombre(string nombre)
         {
             return _query.ObtenerAutorPorNombre(nombre);
         }
