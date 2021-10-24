@@ -21,7 +21,7 @@ namespace Borboteca_Libros.AccessData.Queries
             this.connection = connection;
             this.SqlKata = sqlKata;
         }
-        public Libro GetPathLibro(int id)
+        public Libro GetPathLibro(Guid id)
         {
             var db = new QueryFactory(connection, SqlKata);
             var libro = db.Query("Libro").Select("Id","Titulo","Resenia","Editorial","FechaDePublicacion","Imagen","Pach","Precio").Where("Libro.Id", "=", id).FirstOrDefault<Libro>();

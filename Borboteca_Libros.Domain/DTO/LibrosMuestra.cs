@@ -8,7 +8,7 @@ namespace Borboteca_Libros.Domain.DTO
 {
     public class LibrosMuestra
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Titulo { get; set; }
         public string Resenia { get; set; }
         public string Editorial { get; set; }

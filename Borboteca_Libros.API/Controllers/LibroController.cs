@@ -44,16 +44,28 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no hay libros" });
             }
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> DescargarLibro(int id)
+        [HttpGet("{Guid_id}")]
+        public async Task<IActionResult> DescargarLibro(Guid Guid_Id)
         {
-            var path = @_service.PedirPathLibro(id);
+            var path = @_service.PedirPathLibro(Guid_Id);
             var memory = new MemoryStream();
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
             {await stream.CopyToAsync(memory);}
             memory.Position = 0;
             var ext = Path.GetExtension(path).ToLowerInvariant();
             return File(memory, GetMimeTypes()[ext], Path.GetFileName(path));
+        }
+        [HttpGet]
+        public IActionResult GetLibrosById([FromQuery]Guid id) 
+        {
+            try
+            {
+                return new JsonResult(_service.PedirLibroId(id)) { StatusCode = 200 };
+            }
+            catch(Exception e)
+            {
+                return new JsonResult(BadRequest(e.Message)) { StatusCode = 404 };
+            }
         }
         private Dictionary<string, string> GetMimeTypes() 
         {
