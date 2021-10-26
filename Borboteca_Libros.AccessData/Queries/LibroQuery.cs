@@ -1,6 +1,7 @@
 ﻿using Borboteca_Libros.AccessData.Queries.Repository;
 using Borboteca_Libros.Domain.DTO;
 using Borboteca_Libros.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using SqlKata.Compilers;
 using SqlKata.Execution;
 using System;
@@ -21,11 +22,17 @@ namespace Borboteca_Libros.AccessData.Queries
             this.connection = connection;
             this.SqlKata = sqlKata;
         }
-        public Libro GetPathLibro(Guid id)
+        public LibroConAutorDTO GetPathLibro(Guid id)
         {
             var db = new QueryFactory(connection, SqlKata);
-            var libro = db.Query("Libro").Select("Id","Titulo","Resenia","Editorial","FechaDePublicacion","Imagen","Pach","Precio").Where("Libro.Id", "=", id).FirstOrDefault<Libro>();
-            return libro;
+
+            var libroConAutor = db.Query("Libro")
+                        .Select("Libro.Id", "Libro.Titulo", "Libro.Resenia", "Libro.Editorial", "Libro.FechaDePublicacion", "Libro.Imagen", "Libro.Pach", "Libro.Precio", "Autor.NombreCompleto AS NombreAutor")
+                        .Where("Libro.Id", "=", id)
+                        .Join("Autor", "Autor.Id", "Libro.AutorId").FirstOrDefault<LibroConAutorDTO>();
+                        
+            return libroConAutor;
+          
         }
 
         public List<LibrosMuestra> PedirLibros()
