@@ -12,5 +12,6 @@ namespace Borboteca_Libros.AccessData.Queries.Repository
     {
         LibroConAutorDTO GetPathLibro(Guid id);
         List<LibrosMuestra> PedirLibros();
+        List<LibroBusquedaDTO> PedirLibrosPorBusqueda(string busqueda);
     }
 }
