@@ -42,5 +42,23 @@ namespace Borboteca_Libros.AccessData.Queries
             var result = libro.Get<LibrosMuestra>();
             return result.ToList();
         }
+
+        public List<LibroBusquedaDTO> PedirLibrosPorBusqueda(string busqueda)
+        {
+            var db = new QueryFactory(connection, SqlKata);
+            var result = db.Query("LibroGenero")
+                .Join("Genero", "Genero.Id", "LibroGenero.GeneroId")
+                .Join("Libro", "Libro.Id", "LibroGenero.LibroId")
+                .Join("Autor", "Autor.Id", "Libro.AutorId")
+                .Select("Titulo", "Editorial", "Resenia", "Genero.Descripcion AS NombreGenero")
+                .WhereContains("Genero.Descripcion", busqueda)
+                .OrWhereContains("Libro.Titulo" , busqueda)
+                .OrWhereContains("Libro.Editorial", busqueda)
+                .OrWhereContains("Autor.NombreCompleto", busqueda)
+                .Get<LibroBusquedaDTO>();
+
+
+            return result.ToList();
+        }
     }
 }
