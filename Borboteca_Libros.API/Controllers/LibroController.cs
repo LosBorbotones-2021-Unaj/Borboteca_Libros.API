@@ -58,7 +58,6 @@ namespace Borboteca_Libros.API.Controllers
             }
         }
         [HttpGet("{Guid_id}")]
-        [HttpGet]
         public async Task<IActionResult> DescargarLibro(Guid Guid_Id)
         {
             var path = @_service.PedirPathLibro(Guid_Id);

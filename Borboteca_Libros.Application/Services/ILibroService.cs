@@ -65,8 +65,6 @@ namespace Borboteca_Libros.Application.Services
         {
             return _query.PedirLibrosPorBusqueda(busqueda);
         }
-
-        public List<LibrosMuestra> PedirLibros()
         public List<LibrosMuestra> PedirLibros(int Indice)
         {
             return _query.PedirLibros(Indice);
