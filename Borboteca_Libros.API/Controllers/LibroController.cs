@@ -45,6 +45,20 @@ namespace Borboteca_Libros.API.Controllers
             }
         }
         [HttpGet]
+        [Route("FiltroLibros/")]
+        public IActionResult FiltroLibros(string busqueda)
+        {
+            try
+            {
+                return new JsonResult(_service.FiltroLibros(busqueda)) { StatusCode = 200 };
+            }
+            catch(Exception e)
+            {
+                return BadRequest(new { error = "no hay coincidencias de libros con la busqueda realizada" });
+            }
+        }
+        [HttpGet("{Guid_id}")]
+        [HttpGet]
         public async Task<IActionResult> DescargarLibro(Guid Guid_Id)
         {
             var path = @_service.PedirPathLibro(Guid_Id);

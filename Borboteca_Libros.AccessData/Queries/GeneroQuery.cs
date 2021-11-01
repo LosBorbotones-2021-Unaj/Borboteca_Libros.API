@@ -1,5 +1,6 @@
 ﻿using Borboteca_Libros.AccessData.Queries.Repository;
 using Borboteca_Libros.Domain.Entities;
+using Borboteca_Libros.Domain.DTO;
 using SqlKata.Compilers;
 using SqlKata.Execution;
 using System;
@@ -29,7 +30,23 @@ namespace Borboteca_Libros.AccessData.Queries
                 .Where("Id", "=", id)
                 .First<Genero>();
             return genero;
-            throw new NotImplementedException();
+        }
+
+        public GeneroDTO GetGenerosDTOById(int id)
+        {
+            Genero genero = GetGenerosById(id);
+            GeneroDTO generoDTO = new GeneroDTO() { Descripcion = genero.Descripcion };
+            return generoDTO;
+        }
+
+        public GeneroDTO GetGenerosDTOByName(string nombre)
+        {
+            var db = new QueryFactory(connection, compiler);
+            var genero = db.Query("Genero")
+                .Where("Descripcion", "=", nombre)
+                .First<Genero>();
+            GeneroDTO generoDTO = new GeneroDTO() { Descripcion = genero.Descripcion };
+            return generoDTO;
         }
     }
 }
