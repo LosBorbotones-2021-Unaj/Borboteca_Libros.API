@@ -15,7 +15,7 @@ namespace Borboteca_Libros.Domain.DTO
         public string Imagen { get; set; }
         public string Pach { get; set; }
         public int Precio { get; set; }
-        public int[] Generos { get; set; }
+        public List<string> Generos { get; set; }
         public string NombreAutor { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace Borboteca_Libros.AccessData.Queries.Repository
     public interface ILibroQuery
     {
         LibroConAutorDTO GetPathLibro(Guid id);
-        List<LibrosMuestra> PedirLibros();
+        List<LibrosMuestra> PedirLibros(int Indice);
+        int ContadorLibros();
     }
 }

@@ -32,19 +32,19 @@ namespace Borboteca_Libros.API.Controllers
             }
         }
         [HttpGet]
-        [Route("PedirLibros/")]
-        public IActionResult GetLibros() 
+        [Route("PedirLibros/{Indice}")]
+        public IActionResult GetLibros(int Indice) 
         {
             try 
             {
-                return new JsonResult(_service.PedirLibros()) { StatusCode = 200 };
+                return new JsonResult(_service.PedirLibros(Indice)) { StatusCode = 200 };
             }
             catch 
             {
                 return BadRequest(new { error = "no hay libros" });
             }
         }
-        [HttpGet("{Guid_id}")]
+        [HttpGet]
         public async Task<IActionResult> DescargarLibro(Guid Guid_Id)
         {
             var path = @_service.PedirPathLibro(Guid_Id);
@@ -55,8 +55,8 @@ namespace Borboteca_Libros.API.Controllers
             var ext = Path.GetExtension(path).ToLowerInvariant();
             return File(memory, GetMimeTypes()[ext], Path.GetFileName(path));
         }
-        [HttpGet]
-        public IActionResult GetLibrosById([FromQuery]Guid id) 
+        [HttpGet("PedirLibroId/")]
+        public IActionResult GetLibrosById(Guid id) 
         {
             try
             {
@@ -83,6 +83,18 @@ namespace Borboteca_Libros.API.Controllers
                 {".gif","image/gif"},
                 {".csv","image/csv"},
             };
+        }
+        [HttpGet("Contador/")]
+        public IActionResult PedirCantidadLibros() 
+        {
+            try 
+            {
+                return new JsonResult(_service.PedirCantidadLibros()) { StatusCode = 200 };
+            }
+            catch 
+            {
+                return new JsonResult(BadRequest("No hay libros "));
+            }
         }
 
     }

@@ -27,20 +27,41 @@ namespace Borboteca_Libros.AccessData.Queries
             var db = new QueryFactory(connection, SqlKata);
 
             var libroConAutor = db.Query("Libro")
+                        .Join("Autor", "Autor.Id", "Libro.AutorId")
                         .Select("Libro.Id", "Libro.Titulo", "Libro.Resenia", "Libro.Editorial", "Libro.FechaDePublicacion", "Libro.Imagen", "Libro.Pach", "Libro.Precio", "Autor.NombreCompleto AS NombreAutor")
                         .Where("Libro.Id", "=", id)
-                        .Join("Autor", "Autor.Id", "Libro.AutorId").FirstOrDefault<LibroConAutorDTO>();
-                        
-            return libroConAutor;
+                        .FirstOrDefault<LibroConAutorDTO>();
+            var fecha = libroConAutor.FechaDePublicacion.ToShortDateString();
+            DateTime fechaCorta = Convert.ToDateTime(fecha);
+            var retornador = new LibroConAutorDTO() {
+                Titulo = libroConAutor.Titulo,
+                Resenia = libroConAutor.Resenia,
+                Editorial = libroConAutor.Editorial,
+                FechaDePublicacion = fechaCorta,
+                Imagen = libroConAutor.Imagen,
+                Pach = libroConAutor.Pach,
+                Precio = libroConAutor.Precio,
+                NombreAutor = libroConAutor.NombreAutor
+            };
+            return retornador;
           
         }
 
-        public List<LibrosMuestra> PedirLibros()
+        public List<LibrosMuestra> PedirLibros(int Indice)
         {
+            int index = ((Indice - 1) * 9);
             var db = new QueryFactory(connection, SqlKata);
-            var libro = db.Query("Libro");
+            var libro = db.Query("Libro").Limit(9).Offset(index);
             var result = libro.Get<LibrosMuestra>();
             return result.ToList();
+        }
+        public int ContadorLibros() 
+        {
+            var db = new QueryFactory(connection, SqlKata);
+            var libro = db.Query("Libro").Select();
+            var result = libro.Get<LibrosMuestra>().Count();
+            return result;
+
         }
     }
 }
