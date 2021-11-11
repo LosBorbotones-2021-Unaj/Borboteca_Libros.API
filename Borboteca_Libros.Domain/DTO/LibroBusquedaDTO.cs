@@ -12,10 +12,6 @@ namespace Borboteca_Libros.Domain.DTO
         public string Resenia { get; set; }
         public string Editorial { get; set; }
         public DateTime FechaDePublicacion { get; set; }
-        public string Imagen { get; set; }
-        public string Path { get; set; }
-        public int Precio { get; set; }
-
         public string NombreGenero { get; set; }
     }
 }
