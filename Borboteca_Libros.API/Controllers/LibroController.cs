@@ -1,5 +1,7 @@
 ﻿using Borboteca_Libros.Application.Services;
 using Borboteca_Libros.Domain.DTO;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,6 +21,8 @@ namespace Borboteca_Libros.API.Controllers
         {
             this._service = service;
         }
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         public IActionResult Post(LibroDTO libro)
         {
@@ -57,6 +61,8 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no hay coincidencias de libros con la busqueda realizada" });
             }
         }
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("{Guid_id}")]
         public async Task<IActionResult> DescargarLibro(Guid Guid_Id)
         {
@@ -68,6 +74,7 @@ namespace Borboteca_Libros.API.Controllers
             var ext = Path.GetExtension(path).ToLowerInvariant();
             return File(memory, GetMimeTypes()[ext], Path.GetFileName(path));
         }
+
         [HttpGet("PedirLibroId/")]
         public IActionResult GetLibrosById(Guid id) 
         {

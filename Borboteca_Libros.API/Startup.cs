@@ -23,6 +23,9 @@ using Borboteca_Libros.AccessData.Command;
 using Borboteca_Libros.Application.Services;
 using Borboteca_Libros.AccessData.Queries.Repository;
 using Borboteca_Libros.AccessData.Queries;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Borboteca_Libros.API
 {
@@ -55,6 +58,26 @@ namespace Borboteca_Libros.API
                 options.AddPolicy("AnyAllow", policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
 
+            //Configuracion Auth
+
+            var key = Encoding.ASCII.GetBytes(Configuration.GetSection("JwtSettings:Secret").Value);
+            services.AddAuthentication(au =>
+            {
+                au.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                au.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(jwt =>
+            {
+                jwt.RequireHttpsMetadata = false;
+                jwt.SaveToken = true;
+                jwt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
             //Injecciones de dependencias
 
             services.AddTransient<IGenericRepository, GenericRepository>();
@@ -65,6 +88,7 @@ namespace Borboteca_Libros.API
             services.AddTransient<IGeneroQuery, GeneroQuery>();
             services.AddTransient<IGeneroService, GeneroService>();
             services.AddTransient<ILibroGeneroService, LibroGeneroService>();
+
             //Configuracion SqlKata
             services.AddTransient<Compiler, SqlServerCompiler>();
             services.AddTransient<IDbConnection>(b =>
@@ -91,6 +115,8 @@ namespace Borboteca_Libros.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

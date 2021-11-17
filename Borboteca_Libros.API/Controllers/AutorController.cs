@@ -1,5 +1,7 @@
 ﻿using Borboteca_Libros.Application.Services;
 using Borboteca_Libros.Domain.DTO;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,6 +20,8 @@ namespace Borboteca_Libros.API.Controllers
         {
             this._service = service;
         }
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         public IActionResult Post(AutorDTO autor)
         {
