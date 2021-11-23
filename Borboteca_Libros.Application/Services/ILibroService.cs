@@ -16,7 +16,7 @@ namespace Borboteca_Libros.Application.Services
         LibroDTO CrearLibro(LibroDTO libro);
         string PedirPathLibro(Guid id);
         List<LibrosMuestra> PedirLibros(int Indice);
-        LibroConAutorDTO PedirLibroId(Guid id);
+        LibroConAutorDTO PedirLibroId(string id);
 
         List<LibroBusquedaDTO> FiltroLibros(string busqueda);
         int PedirCantidadLibros();
@@ -56,9 +56,9 @@ namespace Borboteca_Libros.Application.Services
             return libro;
         }
 
-        public LibroConAutorDTO PedirLibroId(Guid id)
+        public LibroConAutorDTO PedirLibroId(string id)
         {
-            return _query.GetPathLibro(id);
+            return _query.GetPathLibro(Guid.Parse(id));
         }
 
         public List<LibroBusquedaDTO> FiltroLibros(string busqueda)

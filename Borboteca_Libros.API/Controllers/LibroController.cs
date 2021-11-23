@@ -76,7 +76,7 @@ namespace Borboteca_Libros.API.Controllers
         }
 
         [HttpGet("PedirLibroId/")]
-        public IActionResult GetLibrosById(Guid id) 
+        public IActionResult GetLibrosById(string id) 
         {
             try
             {

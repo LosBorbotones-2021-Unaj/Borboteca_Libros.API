@@ -34,6 +34,7 @@ namespace Borboteca_Libros.AccessData.Queries
             var fecha = libroConAutor.FechaDePublicacion.ToShortDateString();
             DateTime fechaCorta = Convert.ToDateTime(fecha);
             var retornador = new LibroConAutorDTO() {
+                Id = libroConAutor.Id,
                 Titulo = libroConAutor.Titulo,
                 Resenia = libroConAutor.Resenia,
                 Editorial = libroConAutor.Editorial,
