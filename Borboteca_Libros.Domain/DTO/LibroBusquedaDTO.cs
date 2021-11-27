@@ -13,5 +13,6 @@ namespace Borboteca_Libros.Domain.DTO
         public string Editorial { get; set; }
         public DateTime FechaDePublicacion { get; set; }
         public string NombreGenero { get; set; }
+        public string Imagen { get; set; }
     }
 }

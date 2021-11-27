@@ -17,9 +17,11 @@ namespace Borboteca_Libros.API.Controllers
     public class LibroController : Controller
     {
         private readonly ILibroService _service;
-        public LibroController(ILibroService service)
+        private readonly ILibroGeneroService _service2;
+        public LibroController(ILibroService service, ILibroGeneroService libroGeneroService)
         {
             this._service = service;
+            this._service2 = libroGeneroService;
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -57,6 +59,20 @@ namespace Borboteca_Libros.API.Controllers
                 return new JsonResult(_service.FiltroLibros(busqueda)) { StatusCode = 200 };
             }
             catch(Exception e)
+            {
+                return BadRequest(new { error = "no hay coincidencias de libros con la busqueda realizada" });
+            }
+        }
+
+        [HttpGet]
+        [Route("FiltroLibros/autor")]
+        public IActionResult FiltroLibrosAutor(string busqueda, string titulo)
+        {
+            try
+            {
+                return new JsonResult(_service.FiltroLibrosAutor(busqueda, titulo)) { StatusCode = 200 };
+            }
+            catch (Exception e)
             {
                 return BadRequest(new { error = "no hay coincidencias de libros con la busqueda realizada" });
             }
@@ -114,6 +130,20 @@ namespace Borboteca_Libros.API.Controllers
             catch 
             {
                 return new JsonResult(BadRequest("No hay libros "));
+            }
+        }
+
+        [HttpGet]
+        [Route("PedirLibroGenero")]
+        public IActionResult GetLibroGeneroId(Guid LibroGuid)
+        {
+            try
+            {
+                return new JsonResult(_service.PedirGeneroId(LibroGuid                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 )) { StatusCode = 200 };
+            }
+            catch
+            {
+                return BadRequest(new { error = "no hay libros" });
             }
         }
 

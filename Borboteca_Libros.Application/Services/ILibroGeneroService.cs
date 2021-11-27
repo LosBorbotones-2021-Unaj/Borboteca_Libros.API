@@ -1,4 +1,6 @@
 ﻿using Borboteca_Libros.AccessData.Command.Repository;
+using Borboteca_Libros.AccessData.Queries.Repository;
+using Borboteca_Libros.Domain.DTO;
 using Borboteca_Libros.Domain.Entities;
 using System;
 using System.Collections.Generic;
