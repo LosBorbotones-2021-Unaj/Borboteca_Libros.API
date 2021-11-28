@@ -16,10 +16,12 @@ namespace Borboteca_Libros.Application.Services
         LibroDTO CrearLibro(LibroDTO libro);
         string PedirPathLibro(Guid id);
         List<LibrosMuestra> PedirLibros(int Indice);
-        LibroConAutorDTO PedirLibroId(string id);
+        LibroDTO2 PedirLibroId(string id);
 
         List<LibroBusquedaDTO> FiltroLibros(string busqueda);
+        List<LibroBusquedaDTO> FiltroLibrosAutor(string busqueda, Guid LibroGuid);
         int PedirCantidadLibros();
+        GeneroDTO PedirGeneroId(Guid Libroid);
     }
     public class LibroService : ILibroService 
     {
@@ -27,13 +29,15 @@ namespace Borboteca_Libros.Application.Services
         private readonly ILibroQuery _query;
         private readonly ILibroGeneroService _libroGenero;
         private readonly IGeneroQuery _queryGenero;
+        private readonly ILibroGeneroQuery _libroGeneroQuery;
 
-        public LibroService(IGenericRepository repository, ILibroQuery query, ILibroGeneroService libroGenero, IGeneroQuery queryGenero) 
+        public LibroService(IGenericRepository repository, ILibroQuery query, ILibroGeneroService libroGenero, IGeneroQuery queryGenero, ILibroGeneroQuery libroGeneroQuery) 
         {
             this._repository = repository;
             this._query = query;
             this._libroGenero = libroGenero;
             this._queryGenero = queryGenero;
+            this._libroGeneroQuery = libroGeneroQuery;
         }
         public LibroDTO CrearLibro(LibroDTO libro) 
         {
@@ -56,14 +60,49 @@ namespace Borboteca_Libros.Application.Services
             return libro;
         }
 
-        public LibroConAutorDTO PedirLibroId(string id)
+        public LibroDTO2 PedirLibroId(string id)
         {
-            return _query.GetPathLibro(Guid.Parse(id));
+            var libro = _query.GetPathLibro(Guid.Parse(id));
+
+            var entity = new LibroDTO2
+            {
+                Id = libro.Id,
+                Titulo = libro.Titulo,
+                Resenia = libro.Resenia,
+                Editorial = libro.Editorial,
+                FechaDePublicacion = libro.FechaDePublicacion.ToShortDateString(),
+                Imagen = libro.Imagen,
+                Pach = libro.Pach,
+                Precio = libro.Precio,
+                NombreAutor = libro.NombreAutor,
+                Generos = libro.Generos
+            };
+
+            return entity;
         }
 
         public List<LibroBusquedaDTO> FiltroLibros(string busqueda)
         {
             return _query.PedirLibrosPorBusqueda(busqueda);
+        }
+        public List<LibroBusquedaDTO> FiltroLibrosAutor(string busqueda, Guid LibroGuid)
+        {
+            List<LibroBusquedaDTO> listaLibros = _query.PedirLibrosPorBusqueda(busqueda);
+            List<LibroBusquedaDTO> listaLibrosAutor = new List<LibroBusquedaDTO>();
+
+            foreach (var libro in listaLibros)
+            {
+                if (libro.Id != LibroGuid)
+                {
+                    listaLibrosAutor.Add(libro);
+                    if (listaLibrosAutor.Count == 7)
+                    {
+                        return listaLibrosAutor;
+                    }
+                }
+            }
+
+            return listaLibrosAutor;
         }
         public List<LibrosMuestra> PedirLibros(int Indice)
         {
@@ -78,6 +117,14 @@ namespace Borboteca_Libros.Application.Services
         public int PedirCantidadLibros() 
         {
             return _query.ContadorLibros();
+        }
+
+        public GeneroDTO PedirGeneroId(Guid Libroid)
+        {
+            var idGenero = _libroGeneroQuery.PedirGeneroLibro(Libroid);
+            var generoNombre = _queryGenero.GetGenerosDTOById(idGenero);
+            return generoNombre;
+            //return _libroGeneroQuery.PedirGeneroLibro(Libroid);
         }
     }
 }
