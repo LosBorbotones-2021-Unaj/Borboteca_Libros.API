@@ -13,5 +13,6 @@ namespace Borboteca_Libros.AccessData.Queries.Repository
         public Genero GetGenerosById(int id);
         public GeneroDTO GetGenerosDTOById(int id);
         public GeneroDTO GetGenerosDTOByName(string nombre);
+        public List<GeneroDTO> GetGenero();
     }
 }

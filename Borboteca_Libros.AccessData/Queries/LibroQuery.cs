@@ -50,9 +50,9 @@ namespace Borboteca_Libros.AccessData.Queries
 
         public List<LibrosMuestra> PedirLibros(int Indice)
         {
-            int index = ((Indice - 1) * 9);
+            int index = ((Indice - 1) * 10);
             var db = new QueryFactory(connection, SqlKata);
-            var libro = db.Query("Libro").Limit(9).Offset(index);
+            var libro = db.Query("Libro").Limit(10).Offset(index);
             var result = libro.Get<LibrosMuestra>();
             return result.ToList();
         }

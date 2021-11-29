@@ -14,6 +14,7 @@ namespace Borboteca_Libros.Application.Services
     {
         public GeneroDTO PedirGeneroPorId(int id);
         public GeneroDTO PedirGeneroPorNombre(string nombre);
+        List<GeneroDTO> GetGeneros();
     }
     public class GeneroService : IGeneroService
     {
@@ -25,6 +26,12 @@ namespace Borboteca_Libros.Application.Services
             this._repository = repository;
             this._query = query;
         }
+
+        public List<GeneroDTO> GetGeneros()
+        {
+            return _query.GetGenero();
+        }
+
         public GeneroDTO PedirGeneroPorId(int id)
         {
             return _query.GetGenerosDTOById(id);
