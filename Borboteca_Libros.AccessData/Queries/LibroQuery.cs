@@ -64,16 +64,16 @@ namespace Borboteca_Libros.AccessData.Queries
                 .Join("Genero", "Genero.Id", "LibroGenero.GeneroId")
                 .Join("Libro", "Libro.Id", "LibroGenero.LibroId")
                 .Join("Autor", "Autor.Id", "Libro.AutorId")
-                .Select("Titulo", "Editorial", "Resenia", "Genero.Descripcion AS NombreGenero")
+                .Select("Titulo", "Editorial", "Resenia", "Genero.Descripcion AS NombreGenero", "Imagen", "Libro.Id")
                 .WhereContains("Genero.Descripcion", busqueda)
                 .OrWhereContains("Libro.Titulo" , busqueda)
                 .OrWhereContains("Libro.Editorial", busqueda)
                 .OrWhereContains("Autor.NombreCompleto", busqueda)
                 .Get<LibroBusquedaDTO>();
 
-
             return result.ToList();
         }
+
         public int ContadorLibros() 
         {
             var db = new QueryFactory(connection, SqlKata);
