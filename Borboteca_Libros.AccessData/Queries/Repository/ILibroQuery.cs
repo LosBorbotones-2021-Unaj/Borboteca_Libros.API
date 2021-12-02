@@ -14,5 +14,6 @@ namespace Borboteca_Libros.AccessData.Queries.Repository
         List<LibrosMuestra> PedirLibros(int Indice);
         int ContadorLibros();
         List<LibroBusquedaDTO> PedirLibrosPorBusqueda(string busqueda);
+        List<LibroBusquedaDTO> BuscarLibros(string nombre);
     }
 }

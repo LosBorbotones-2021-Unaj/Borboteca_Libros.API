@@ -63,6 +63,19 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no hay coincidencias de libros con la busqueda realizada" });
             }
         }
+        [HttpGet]
+        [Route("Busqueda/")]
+        public IActionResult BuscarLibros(string busqueda)
+        {
+            try
+            {
+                return new JsonResult(_service.BuscadorLibros(busqueda)) { StatusCode = 200 };
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { error = "no hay coincidencias de libros con la busqueda realizada" });
+            }
+        }
 
         [HttpGet]
         [Route("FiltroLibros/autor")]
@@ -77,9 +90,7 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no hay coincidencias de libros con la busqueda realizada" });
             }
         }
-
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        [HttpGet("{Guid_id}")]
+        [HttpGet]
         public async Task<IActionResult> DescargarLibro(Guid Guid_Id)
         {
             var path = @_service.PedirPathLibro(Guid_Id);
@@ -146,6 +157,5 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no hay libros" });
             }
         }
-
     }
 }

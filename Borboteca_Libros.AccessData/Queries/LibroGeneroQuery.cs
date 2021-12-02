@@ -28,7 +28,7 @@ namespace Borboteca_Libros.AccessData.Queries
             var db = new QueryFactory(connection, SqlKata);
             var result = db.Query("LibroGenero")
                 .Select("GeneroId")
-                .Where("LibroId", "=", libroId)
+                .Where("Id", "=", libroId)
                 .FirstOrDefault<LibroGeneroDTO>();
 
             return result.GeneroId;

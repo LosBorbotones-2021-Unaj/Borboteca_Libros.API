@@ -20,6 +20,7 @@ namespace Borboteca_Libros.Application.Services
 
         List<LibroBusquedaDTO> FiltroLibros(string busqueda);
         List<LibroBusquedaDTO> FiltroLibrosAutor(string busqueda, Guid LibroGuid);
+        List<LibroBusquedaDTO> BuscadorLibros(string nombre);
         int PedirCantidadLibros();
         GeneroDTO PedirGeneroId(Guid Libroid);
     }
@@ -84,6 +85,10 @@ namespace Borboteca_Libros.Application.Services
         public List<LibroBusquedaDTO> FiltroLibros(string busqueda)
         {
             return _query.PedirLibrosPorBusqueda(busqueda);
+        }
+        public List<LibroBusquedaDTO> BuscadorLibros(string nombre)
+        {
+            return _query.BuscarLibros(nombre);
         }
         public List<LibroBusquedaDTO> FiltroLibrosAutor(string busqueda, Guid LibroGuid)
         {

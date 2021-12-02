@@ -11,7 +11,6 @@ namespace Borboteca_Libros.Domain.Entities
         public int Id { get; set; }
         public Guid LibroId { get; set; }
         public int GeneroId { get; set; }
-
         public Genero Genero { get; set; }
         public Libro Libro { get; set; }
     }
