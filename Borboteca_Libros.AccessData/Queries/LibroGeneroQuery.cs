@@ -23,15 +23,21 @@ namespace Borboteca_Libros.AccessData.Queries
             this.SqlKata = sqlKata;
         }
 
-        public int PedirGeneroLibro(Guid libroId)
+        public List<LibroGeneroDTO> PedirGeneroLibro(Guid libroId)
         {
             var db = new QueryFactory(connection, SqlKata);
-            var result = db.Query("LibroGenero")
+
+            var generos = db.Query("LibroGenero")
                 .Select("GeneroId")
+<<<<<<< HEAD
+                .Where("LibroId", "=", libroId)
+                .Get<LibroGeneroDTO>().ToList();
+=======
                 .Where("Id", "=", libroId)
                 .FirstOrDefault<LibroGeneroDTO>();
+>>>>>>> master
 
-            return result.GeneroId;
+            return generos;
         }
 
     }

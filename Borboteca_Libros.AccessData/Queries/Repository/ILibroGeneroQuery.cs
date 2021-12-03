@@ -9,6 +9,6 @@ namespace Borboteca_Libros.AccessData.Queries.Repository
 {
     public interface ILibroGeneroQuery
     {
-        int PedirGeneroLibro(Guid libroId);
+        List<LibroGeneroDTO> PedirGeneroLibro(Guid libroId);
     }
 }
