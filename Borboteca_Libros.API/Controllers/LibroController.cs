@@ -90,6 +90,7 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no hay coincidencias de libros con la busqueda realizada" });
             }
         }
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
         public async Task<IActionResult> DescargarLibro(Guid Guid_Id)
         {
