@@ -44,5 +44,17 @@ namespace Borboteca_Libros.API.Controllers
                 return BadRequest(new { error = "no se pudo obtener el genero por nombre." });
             }
         }
+        [HttpGet]
+        public IActionResult GetGeneros()
+        {
+            try
+            {
+                return new JsonResult(_service.GetGeneros()) { StatusCode = 200 };
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }

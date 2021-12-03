@@ -8,6 +8,7 @@ namespace Borboteca_Libros.Domain.DTO
 {
     public class GeneroDTO
     {
+        public int Id { get; set; }
         public string Descripcion { get; set; }
     }
 }

@@ -50,9 +50,9 @@ namespace Borboteca_Libros.AccessData.Queries
 
         public List<LibrosMuestra> PedirLibros(int Indice)
         {
-            int index = ((Indice - 1) * 9);
+            int index = ((Indice - 1) * 8);
             var db = new QueryFactory(connection, SqlKata);
-            var libro = db.Query("Libro").Limit(9).Offset(index);
+            var libro = db.Query("Libro").Limit(8).Offset(index);
             var result = libro.Get<LibrosMuestra>();
             return result.ToList();
         }
@@ -71,6 +71,15 @@ namespace Borboteca_Libros.AccessData.Queries
                 .OrWhereContains("Autor.NombreCompleto", busqueda)
                 .Get<LibroBusquedaDTO>();
 
+            return result.ToList();
+        }
+        public List<LibroBusquedaDTO> BuscarLibros (string nombre)
+        {
+            var db = new QueryFactory(connection, SqlKata);
+            var result = db.Query("Libro")
+                .Select("Titulo", "Imagen", "Id")
+                .WhereContains("Libro.Titulo", nombre)
+                .Get<LibroBusquedaDTO>();
             return result.ToList();
         }
 

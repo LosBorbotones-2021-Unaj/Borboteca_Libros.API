@@ -29,8 +29,13 @@ namespace Borboteca_Libros.AccessData.Queries
 
             var generos = db.Query("LibroGenero")
                 .Select("GeneroId")
+<<<<<<< HEAD
                 .Where("LibroId", "=", libroId)
                 .Get<LibroGeneroDTO>().ToList();
+=======
+                .Where("Id", "=", libroId)
+                .FirstOrDefault<LibroGeneroDTO>();
+>>>>>>> master
 
             return generos;
         }

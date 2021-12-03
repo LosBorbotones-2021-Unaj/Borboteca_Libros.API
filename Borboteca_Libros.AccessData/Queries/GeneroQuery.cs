@@ -35,8 +35,18 @@ namespace Borboteca_Libros.AccessData.Queries
         public GeneroDTO GetGenerosDTOById(int id)
         {
             Genero genero = GetGenerosById(id);
-            GeneroDTO generoDTO = new GeneroDTO() { Descripcion = genero.Descripcion };
+            GeneroDTO generoDTO = new GeneroDTO() {
+                Id = genero.Id,
+                Descripcion = genero.Descripcion };
             return generoDTO;
+        }
+        public List<GeneroDTO> GetGenero()
+        {
+            var db = new QueryFactory(connection, compiler);
+            var genero = db.Query("Genero");
+            var result = genero.Get<GeneroDTO>();
+            return result.ToList();
+
         }
 
         public GeneroDTO GetGenerosDTOByName(string nombre)
@@ -45,7 +55,9 @@ namespace Borboteca_Libros.AccessData.Queries
             var genero = db.Query("Genero")
                 .Where("Descripcion", "=", nombre)
                 .First<Genero>();
-            GeneroDTO generoDTO = new GeneroDTO() { Descripcion = genero.Descripcion };
+            GeneroDTO generoDTO = new GeneroDTO() {
+                Id = genero.Id,
+                Descripcion = genero.Descripcion };
             return generoDTO;
         }
     }
