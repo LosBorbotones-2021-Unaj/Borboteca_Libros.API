@@ -29,7 +29,7 @@ namespace Borboteca_Libros.AccessData.Configurations
                 {
                     Id = Guid.Parse("2550E1B1-9E48-43B4-875F-14634D4C07F1"),
                     Titulo = "Frutas del mundo",
-                    Resenia = "Frutas del mundo",
+                    Resenia = "La fruta ocupa un lugar fundamental en la dita mediterránea, y todos conocemos las enormes ventajas de integrarla en la alimentación. Nos resulta muy habitual su consumo, y en nuestro país es muy común ver campos cultivados con las más diversas especies. Además, gracias a la globalización del mercado y la rapidez en los transportes, podemos acceder a numerosas frutas que hace un tiempo nos eran desconocidas. Susanna Lyle ha elaborado esta guía exhaustiva que pretende ser una fuente de inspiración para todo aquel que desee cultivar y probar nuevos alimentos. Incluye especies muy comunes y otras menos conocidas, pero igualmente interesantes, que crecen en climas templados y subtropicales. Se presentan más de 300, y se proporciona información detallada sobre cada una, lo que hace de esta obra un enciclopedia única.",
                     Editorial = "Free Editorial",
                     FechaDePublicacion = DateTime.Parse("2021-11-01 00:00:00.0000000"),
                     Imagen = "https://www.elsotano.com/imagenes/9788431/978843155164.JPG",
@@ -42,7 +42,7 @@ namespace Borboteca_Libros.AccessData.Configurations
                 {
                     Id = Guid.Parse("A76D59D2-3CB0-44B3-9041-4421E14C69C3"),
                     Titulo = "Hawai",
-                    Resenia = "Trata sobre Hawai",
+                    Resenia = "'Hawai' es la historia de hombres y mujeres de distintas razas, religiones, costumbres y tradiciones, que cruzaron los mares atraídos por el hechizo de esas islas. James Michener concentra el interés del lector en un grupo familiar que vive las emociones, idilios y aventuras propias del ambiente que imperaba en las islas. Todo el acento de esta novela ha sido puesto por el autor en los personajes y en sus triunfos, tragedias, amores y odios personales.",
                     Editorial = "Free Editorial",
                     FechaDePublicacion = DateTime.Parse("2021-11-01 00:00:00.0000000"),
                     Imagen = "https://viajes.nationalgeographic.com.es/medio/2021/08/23/la-exclusiva-costa-de-na-pali_a5d66976_2000x1333.jpg",
@@ -81,7 +81,7 @@ namespace Borboteca_Libros.AccessData.Configurations
                 {
                     Id = Guid.Parse("B8778F7A-15BA-40A0-A66C-A50A7B01F2F3"),
                     Titulo = "La correccion",
-                    Resenia = "Es un libro que trata sobre la correccion y si sabemos que faltan tildes no nos corrija",
+                    Resenia = "Tras el suicidio de su amigo Roithamer, el anónimo narrador de la novela llega a la casa del taxidermista Höller, en cuya buhardilla el suicida ha permanecido durante seis años entregado a la tarea de planear y construir, en el centro geométrico exacto del bosque de Kobernauss, un Cono que, desafiando las leyes de la construcción tradicional, estaba destinado a ser residencia y «felicidad suprema» de su hermana. Urdida en torno a un proceso obsesivo de creación y destrucción que se plasma en un afán de constante corrección, la novela es una reflexión sobre los problemas del hombre contemporáneo, enfrentado a la deshumanización, el desamor y la soledad.",
                     Editorial = "Free Editorial",
                     FechaDePublicacion = DateTime.Parse("2021-11-01 00:00:00.0000000"),
                     Imagen = "https://www.tuslibros.com/2d_covers/upscaled/1332021893.jpg",
@@ -107,7 +107,7 @@ namespace Borboteca_Libros.AccessData.Configurations
                 {
                     Id = Guid.Parse("67F3D74E-039E-415C-8F82-BE1A87111B3F"),
                     Titulo = "La barraca",
-                    Resenia = "Trata sobre la barraca",
+                    Resenia = "El tema de La Barraca es la injusticia de las personas ignorantes y pobres, cuyo sentido de la existencia se basa en la supervivencia. En esta novela critica a la vez que describe la sociedad de la época. Dicha novela cuenta la desgraciada historia de una familia pobre en la huerta valenciana.",
                     Editorial = "Free Editorial",
                     FechaDePublicacion = DateTime.Parse("2021-11-01 00:00:00.0000000"),
                     Imagen = "https://m.media-amazon.com/images/I/413zycyOWKL.jpg",
@@ -133,7 +133,7 @@ namespace Borboteca_Libros.AccessData.Configurations
                 {
                     Id = Guid.Parse("1759CD7F-A67E-419E-8923-DB27B73B637D"),
                     Titulo = "A los pies de Venus",
-                    Resenia = "Serie del gran escritor Vicente Ibañez que cuenta la historia de los pies de una gran venus",
+                    Resenia = "Continuación de El Papa del Mar, en la que se da inicio a la historia amorosa que liga a Claudio Borja, un joven poeta valenciano, y Rosaura Salcedo, una rica dama argentina, esta novela en la que prosiguen sus avatares puede leerse perfectamente, sin embargo, como novela suelta.",
                     Editorial = "Freak World",
                     FechaDePublicacion = DateTime.Parse("2021-11-01 00:00:00.0000000"),
                     Imagen = "https://www.storytel.com/images/e/200x200/0002398771.jpg",
@@ -146,7 +146,7 @@ namespace Borboteca_Libros.AccessData.Configurations
                 {
                     Id = Guid.Parse("93CD1293-5D5E-455E-A2CC-DEAA1ECEB064"),
                     Titulo = "La vuelta al mundo de un novelista",
-                    Resenia = "Trata de un novelista de hace un viaje por el mundo y cuenta su vida",
+                    Resenia = "Es un carrusel ameno e inolvidable de lugares, pueblos y personas en el que Blasco, como incomparable compañero de viaje, hace desfilar ante nuestros ojos la espléndida y fascinante variedad de unos paisajes de leyenda hoy en gran parte trivializados o desaparecidos",
                     Editorial = "Free Editorial",
                     FechaDePublicacion = DateTime.Parse("2021-11-01 00:00:00.0000000"),
                     Imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Nyolcvan_nap_alatt_a_F%C3%B6ld_k%C3%B6r%C3%BCl.jpg/220px-Nyolcvan_nap_alatt_a_F%C3%B6ld_k%C3%B6r%C3%BCl.jpg",
@@ -159,7 +159,7 @@ namespace Borboteca_Libros.AccessData.Configurations
                 {
                     Id = Guid.Parse("E87266D6-99CB-4AFD-849B-89C49D36C250"),
                     Titulo = "Idioteces de los idiotas y otras tonterías",
-                    Resenia = "Trata sobre las idioteces de los idiotas y sus otras tonterias",
+                    Resenia = "Es el escritor actual en español más leído del mundo, y leyendo sus relatos se comprende el por qué: sencillamente porque nos divierte con sus brillantes reflexiones sobre temas cotidianos que a todos nos afectan. ",
                     Editorial = "Free Editorial",
                     FechaDePublicacion = DateTime.Parse("2021-11-01 00:00:00.0000000"),
                     Imagen = "https://www.tuslibros.com/2d_covers/large/1509826828.jpg",
@@ -172,7 +172,7 @@ namespace Borboteca_Libros.AccessData.Configurations
                 {
                     Id = Guid.Parse("EBF123B7-0841-40EA-9546-FF7CCC17835C"),
                     Titulo = "En la puerta del cielo",
-                    Resenia = "El viaje de un neurocirujano a la vida después de la vida.",
+                    Resenia = "Antes de desaparecer junto a su ayudante americana, el astrofísico Lalo Múgica informa a una de sus vecinas de que ha encontrado las claves para abrir la puerta del cielo. Gerardo Vilela, un sencillo profesor de Instituto, gana una beca que le lleva de Lugo a Madrid. Cuando las enigmáticas vecinas del número 12 le realquilan la antigua casa de Múgica, él se siente feliz. Pero el ático guarda algo para él: un acta firmada por Pilatos que narra otra desaparición ocurrida en Judea el año de la muerte de Jesucristo. Con veinte siglos de diferencia, ambas desapariciones parecen estar extrañamente relacionadas..",
                     Editorial = "Free Editorial",
                     FechaDePublicacion = DateTime.Parse("2021-11-01 00:00:00.0000000"),
                     Imagen = "https://http2.mlstatic.com/D_NQ_NP_2X_822295-MLA45613745505_042021-F.webp",

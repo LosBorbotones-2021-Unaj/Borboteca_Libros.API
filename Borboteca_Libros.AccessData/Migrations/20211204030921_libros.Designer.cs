@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Borboteca_Libros.AccessData.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211118013838_Libros")]
-    partial class Libros
+    [Migration("20211204030921_libros")]
+    partial class libros
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -173,7 +173,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                             Imagen = "https://www.elsotano.com/imagenes/9788431/978843155164.JPG",
                             Pach = "C:/Borboteca-libros/frutas_del_mundo.pdf",
                             Precio = 3000,
-                            Resenia = "Frutas del mundo",
+                            Resenia = "La fruta ocupa un lugar fundamental en la dita mediterránea, y todos conocemos las enormes ventajas de integrarla en la alimentación. Nos resulta muy habitual su consumo, y en nuestro país es muy común ver campos cultivados con las más diversas especies. Además, gracias a la globalización del mercado y la rapidez en los transportes, podemos acceder a numerosas frutas que hace un tiempo nos eran desconocidas. Susanna Lyle ha elaborado esta guía exhaustiva que pretende ser una fuente de inspiración para todo aquel que desee cultivar y probar nuevos alimentos. Incluye especies muy comunes y otras menos conocidas, pero igualmente interesantes, que crecen en climas templados y subtropicales. Se presentan más de 300, y se proporciona información detallada sobre cada una, lo que hace de esta obra un enciclopedia única.",
                             Titulo = "Frutas del mundo"
                         },
                         new
@@ -185,7 +185,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                             Imagen = "https://viajes.nationalgeographic.com.es/medio/2021/08/23/la-exclusiva-costa-de-na-pali_a5d66976_2000x1333.jpg",
                             Pach = "C:/Borboteca-libros/hawai.pdf",
                             Precio = 2000,
-                            Resenia = "Trata sobre Hawai",
+                            Resenia = "'Hawai' es la historia de hombres y mujeres de distintas razas, religiones, costumbres y tradiciones, que cruzaron los mares atraídos por el hechizo de esas islas. James Michener concentra el interés del lector en un grupo familiar que vive las emociones, idilios y aventuras propias del ambiente que imperaba en las islas. Todo el acento de esta novela ha sido puesto por el autor en los personajes y en sus triunfos, tragedias, amores y odios personales.",
                             Titulo = "Hawai"
                         },
                         new
@@ -221,7 +221,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                             Imagen = "https://www.tuslibros.com/2d_covers/upscaled/1332021893.jpg",
                             Pach = "C:/Borboteca-libros/la_correccion.pdf",
                             Precio = 1500,
-                            Resenia = "Es un libro que trata sobre la correccion y si sabemos que faltan tildes no nos corrija",
+                            Resenia = "Tras el suicidio de su amigo Roithamer, el anónimo narrador de la novela llega a la casa del taxidermista Höller, en cuya buhardilla el suicida ha permanecido durante seis años entregado a la tarea de planear y construir, en el centro geométrico exacto del bosque de Kobernauss, un Cono que, desafiando las leyes de la construcción tradicional, estaba destinado a ser residencia y «felicidad suprema» de su hermana. Urdida en torno a un proceso obsesivo de creación y destrucción que se plasma en un afán de constante corrección, la novela es una reflexión sobre los problemas del hombre contemporáneo, enfrentado a la deshumanización, el desamor y la soledad.",
                             Titulo = "La correccion"
                         },
                         new
@@ -245,7 +245,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                             Imagen = "https://m.media-amazon.com/images/I/413zycyOWKL.jpg",
                             Pach = "C:/Borboteca-libros/la_barraca.pdf",
                             Precio = 3000,
-                            Resenia = "Trata sobre la barraca",
+                            Resenia = "El tema de La Barraca es la injusticia de las personas ignorantes y pobres, cuyo sentido de la existencia se basa en la supervivencia. En esta novela critica a la vez que describe la sociedad de la época. Dicha novela cuenta la desgraciada historia de una familia pobre en la huerta valenciana.",
                             Titulo = "La barraca"
                         },
                         new
@@ -269,7 +269,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                             Imagen = "https://www.storytel.com/images/e/200x200/0002398771.jpg",
                             Pach = "C:/Borboteca-libros/a_los_pies_de_venus.pdf",
                             Precio = 3000,
-                            Resenia = "Serie del gran escritor Vicente Ibañez que cuenta la historia de los pies de una gran venus",
+                            Resenia = "Continuación de El Papa del Mar, en la que se da inicio a la historia amorosa que liga a Claudio Borja, un joven poeta valenciano, y Rosaura Salcedo, una rica dama argentina, esta novela en la que prosiguen sus avatares puede leerse perfectamente, sin embargo, como novela suelta.",
                             Titulo = "A los pies de Venus"
                         },
                         new
@@ -281,7 +281,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                             Imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Nyolcvan_nap_alatt_a_F%C3%B6ld_k%C3%B6r%C3%BCl.jpg/220px-Nyolcvan_nap_alatt_a_F%C3%B6ld_k%C3%B6r%C3%BCl.jpg",
                             Pach = "C:/Borboteca-libros/la_vuelta_al_mundo_de_un_novelista_tomo_i.pdf",
                             Precio = 3000,
-                            Resenia = "Trata de un novelista de hace un viaje por el mundo y cuenta su vida",
+                            Resenia = "Es un carrusel ameno e inolvidable de lugares, pueblos y personas en el que Blasco, como incomparable compañero de viaje, hace desfilar ante nuestros ojos la espléndida y fascinante variedad de unos paisajes de leyenda hoy en gran parte trivializados o desaparecidos",
                             Titulo = "La vuelta al mundo de un novelista"
                         },
                         new
@@ -293,7 +293,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                             Imagen = "https://www.tuslibros.com/2d_covers/large/1509826828.jpg",
                             Pach = "C:/Borboteca-libros/idioteces_de_los_idiotas_y_otras_tonterías.pdf",
                             Precio = 6000,
-                            Resenia = "Trata sobre las idioteces de los idiotas y sus otras tonterias",
+                            Resenia = "Es el escritor actual en español más leído del mundo, y leyendo sus relatos se comprende el por qué: sencillamente porque nos divierte con sus brillantes reflexiones sobre temas cotidianos que a todos nos afectan. ",
                             Titulo = "Idioteces de los idiotas y otras tonterías"
                         },
                         new
@@ -305,7 +305,7 @@ namespace Borboteca_Libros.AccessData.Migrations
                             Imagen = "https://http2.mlstatic.com/D_NQ_NP_2X_822295-MLA45613745505_042021-F.webp",
                             Pach = "C:/Borboteca-libros/en_la_puerta_del_cielo.pdf",
                             Precio = 3000,
-                            Resenia = "El viaje de un neurocirujano a la vida después de la vida.",
+                            Resenia = "Antes de desaparecer junto a su ayudante americana, el astrofísico Lalo Múgica informa a una de sus vecinas de que ha encontrado las claves para abrir la puerta del cielo. Gerardo Vilela, un sencillo profesor de Instituto, gana una beca que le lleva de Lugo a Madrid. Cuando las enigmáticas vecinas del número 12 le realquilan la antigua casa de Múgica, él se siente feliz. Pero el ático guarda algo para él: un acta firmada por Pilatos que narra otra desaparición ocurrida en Judea el año de la muerte de Jesucristo. Con veinte siglos de diferencia, ambas desapariciones parecen estar extrañamente relacionadas..",
                             Titulo = "En la puerta del cielo"
                         });
                 });
@@ -330,6 +330,92 @@ namespace Borboteca_Libros.AccessData.Migrations
                     b.HasIndex("LibroId");
 
                     b.ToTable("LibroGenero");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            GeneroId = 5,
+                            LibroId = new Guid("2550e1b1-9e48-43b4-875f-14634d4c07f1")
+                        },
+                        new
+                        {
+                            Id = 2,
+                            GeneroId = 5,
+                            LibroId = new Guid("a76d59d2-3cb0-44b3-9041-4421e14c69c3")
+                        },
+                        new
+                        {
+                            Id = 3,
+                            GeneroId = 3,
+                            LibroId = new Guid("e87266d6-99cb-4afd-849b-89c49d36c250")
+                        },
+                        new
+                        {
+                            Id = 4,
+                            GeneroId = 5,
+                            LibroId = new Guid("e87266d6-99cb-4afd-849b-89c49d36c250")
+                        },
+                        new
+                        {
+                            Id = 5,
+                            GeneroId = 4,
+                            LibroId = new Guid("2650baa6-334b-4e17-b7d5-9f773f964e37")
+                        },
+                        new
+                        {
+                            Id = 6,
+                            GeneroId = 1,
+                            LibroId = new Guid("b8778f7a-15ba-40a0-a66c-a50a7b01f2f3")
+                        },
+                        new
+                        {
+                            Id = 7,
+                            GeneroId = 1,
+                            LibroId = new Guid("2dd83fca-7e9f-45d0-a7df-a9e734bf1e79")
+                        },
+                        new
+                        {
+                            Id = 8,
+                            GeneroId = 4,
+                            LibroId = new Guid("67f3d74e-039e-415c-8f82-be1a87111b3f")
+                        },
+                        new
+                        {
+                            Id = 9,
+                            GeneroId = 6,
+                            LibroId = new Guid("3fe0deba-7374-4293-9067-c0ede9c768fe")
+                        },
+                        new
+                        {
+                            Id = 10,
+                            GeneroId = 4,
+                            LibroId = new Guid("93cd1293-5d5e-455e-a2cc-deaa1eceb064")
+                        },
+                        new
+                        {
+                            Id = 11,
+                            GeneroId = 1,
+                            LibroId = new Guid("ebf123b7-0841-40ea-9546-ff7ccc17835c")
+                        },
+                        new
+                        {
+                            Id = 12,
+                            GeneroId = 4,
+                            LibroId = new Guid("2550e1b1-9e48-43b4-875f-14634d4c07f1")
+                        },
+                        new
+                        {
+                            Id = 13,
+                            GeneroId = 1,
+                            LibroId = new Guid("a76d59d2-3cb0-44b3-9041-4421e14c69c3")
+                        },
+                        new
+                        {
+                            Id = 14,
+                            GeneroId = 4,
+                            LibroId = new Guid("b8778f7a-15ba-40a0-a66c-a50a7b01f2f3")
+                        });
                 });
 
             modelBuilder.Entity("Borboteca_Libros.Domain.Entities.Libro", b =>
